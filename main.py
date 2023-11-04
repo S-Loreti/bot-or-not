@@ -123,7 +123,7 @@ def update_score(user_id: int, score_update: ScoreUpdate, db: Session = Depends(
 
     if score_update.correct:
         db_user.current_score += 1
-        if db_user.current_score >= 10:  # Winning condition
+        if db_user.current_score >= 10:  # Winning condition parameter
             game_won = True
             db_user.high_score = max(db_user.high_score, db_user.current_score)
             
